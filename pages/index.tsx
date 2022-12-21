@@ -29,14 +29,14 @@ export default function Home() {
             id="name"
             type="text"
             placeholder="Digite Seu Primeiro Nome"
-            className="w-full p-2 rounded-xl border-b-2 border-t-2 border-t-transparent bg-transparent text-white placeholder:text-white focus:border-white focus:border-t-white outline-none duration-200"
+            className="z-50 w-full p-2 rounded-xl border-b-2 border-t-2 border-t-transparent bg-transparent text-white placeholder:text-white focus:border-white focus:border-t-white outline-none duration-200"
             value={name}
             onChange={(e) => setNameInCart(e.target.value)}
           />
           {name === "" ? (
             <button
               type="button"
-              className="flex items-center w-full font-bold justify-between text-white bg-gradient-to-r from-purple-700 to-red-600 transition-all duration-200 rounded-xl p-2 mt-5 cursor-not-allowed"
+              className="z-50 flex items-center w-full font-bold justify-between text-white bg-gradient-to-r from-purple-700 to-red-600 transition-all duration-200 rounded-xl p-2 mt-5 cursor-not-allowed"
             >
               Clique Para Abrir seu Presente <Gift size={32} />
             </button>
@@ -44,7 +44,7 @@ export default function Home() {
             <Link href="/SantaCart">
               <button
                 type="submit"
-                className="flex items-center w-full font-bold justify-between text-white bg-gradient-to-r from-purple-500 to-red-500 hover:bg-gradient-to-r hover:from-purple-700 hover:to-red-600 transition-all duration-200 rounded-xl p-2 mt-5"
+                className="z-50 flex items-center w-full font-bold justify-between text-white bg-gradient-to-r from-purple-500 to-red-500 hover:bg-gradient-to-r hover:from-purple-700 hover:to-red-600 transition-all duration-200 rounded-xl p-2 mt-5"
               >
                 Clique Para Abrir seu Presente <Gift size={32} />
               </button>
