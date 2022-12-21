@@ -25,6 +25,7 @@ export default function Home() {
       <main className="h-screen w-full lg:w-[40%] flex items-center justify-center mx-auto bg-blur bg-cover shadow-white shadow-lg relative">
         <form onSubmit={handleSubmit} className="font-roboto">
           <input
+            autoComplete="off"
             id="name"
             type="text"
             placeholder="Digite Seu Primeiro Nome"
