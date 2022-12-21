@@ -1,18 +1,14 @@
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
-import { Roboto } from "@next/font/google";
 import { Gift } from "phosphor-react";
 import { useContext } from "react";
 import { FormContext } from "../context/FormContext";
-import { useForm } from "react-hook-form";
 
 import Lottie from "lottie-react";
 import woodAnimation from "../public/assets/wood.json";
 
 export default function Home() {
   const { setNameInCart, name } = useContext(FormContext);
-
 
   function handleSubmit(e: any) {
     e.preventDefault();
@@ -26,7 +22,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="h-screen w-[40%] flex items-center justify-center mx-auto bg-blur bg-cover shadow-white shadow-lg relative">
+      <main className="h-screen w-full lg:w-[40%] flex items-center justify-center mx-auto bg-blur bg-cover shadow-white shadow-lg relative">
         <form onSubmit={handleSubmit} className="font-roboto">
           <input
             id="name"
@@ -36,25 +32,34 @@ export default function Home() {
             value={name}
             onChange={(e) => setNameInCart(e.target.value)}
           />
-          <Link href="/SantaCart">
+          {name === "" ? (
             <button
-              type="submit"
-              className="flex items-center w-full font-bold justify-between text-white bg-gradient-to-r from-purple-500 to-red-500 hover:bg-gradient-to-r hover:from-purple-700 hover:to-red-600 duration-200 rounded-xl p-2 mt-5"
+              type="button"
+              className="flex items-center w-full font-bold justify-between text-white bg-gradient-to-r from-purple-700 to-red-600 transition-all duration-200 rounded-xl p-2 mt-5 cursor-not-allowed"
             >
               Clique Para Abrir seu Presente <Gift size={32} />
             </button>
-          </Link>
+          ) : (
+            <Link href="/SantaCart">
+              <button
+                type="submit"
+                className="flex items-center w-full font-bold justify-between text-white bg-gradient-to-r from-purple-500 to-red-500 hover:bg-gradient-to-r hover:from-purple-700 hover:to-red-600 transition-all duration-200 rounded-xl p-2 mt-5"
+              >
+                Clique Para Abrir seu Presente <Gift size={32} />
+              </button>
+            </Link>
+          )}
         </form>
         <Lottie
-        animationData={woodAnimation}
-        className="w-72 absolute bottom-0 right-0"
-        loop={false}
-      />
-      <Lottie
-        animationData={woodAnimation}
-        className="w-72 absolute bottom-0 left-0"
-        loop={false}
-      />
+          animationData={woodAnimation}
+          className="w-72 absolute bottom-0 right-0"
+          loop={false}
+        />
+        <Lottie
+          animationData={woodAnimation}
+          className="w-72 absolute bottom-0 left-0"
+          loop={false}
+        />
       </main>
     </>
   );
