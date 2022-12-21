@@ -11,10 +11,6 @@ interface CyclesContextProviderProps {
   children: ReactNode
 }
 
-interface NewCartData {
-  name: string
-}
-
 export function FormContextProvider({
   children,
 }: CyclesContextProviderProps) {

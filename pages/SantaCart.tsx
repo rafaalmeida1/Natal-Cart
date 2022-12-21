@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { FormContext } from "../context/FormContext";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "phosphor-react";
 import Lottie from "lottie-react";
