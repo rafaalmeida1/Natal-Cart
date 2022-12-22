@@ -7,9 +7,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        blur: 'url(/assets/bgNatal.png)',
-        cartNatal: 'url(/assets/bgCartNatal.png)',
         snow: 'url(/assets/snow.png)',
+        bgNatal: 'url(/assets/bgNatal.png)',
       },
       fontFamily: {
         sans: [ 'Mountains of Christmas'],

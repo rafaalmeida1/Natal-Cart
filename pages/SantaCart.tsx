@@ -8,28 +8,17 @@ import papanelAnimation from "../public/assets/papanel.json";
 import woodAnimation from "../public/assets/wood.json";
 import papanelHead from "../public/assets/papanelHead.json";
 
+const myLoader = () => {
+  return "https://i.imgur.com/780BLED.png";
+};
+
 export default function SantaCart() {
   const { name } = useContext(FormContext);
 
   return (
-    <main className="h-screen w-screen lg:w-[40%] flex flex-col items-center justify-center mx-auto shadow-white shadow-2xl relative">
+    <main className="h-screen w-screen lg:w-[40%] flex flex-col items-center justify-center mx-auto relative bg-bgNatal bg-cover shadow-white shadow-xl">
       {name === "" ? (
         <>
-          <div
-            style={{
-              zIndex: -1,
-              position: "fixed",
-              width: "100vw",
-              height: "100vh",
-            }}
-          >
-            <Image
-              src="/assets/bgNatal.png"
-              alt=""
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
           <Link href="/">
             <h1 className="text-[#FFD700] text-4xl flex items-center gap-4">
               <ArrowLeft />
@@ -39,21 +28,6 @@ export default function SantaCart() {
         </>
       ) : (
         <>
-          <div
-            style={{
-              zIndex: -1,
-              position: "fixed",
-              width: "100vw",
-              height: "100vh",
-            }}
-          >
-            <Image
-              src="/assets/bgNatal.png"
-              alt=""
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
           <div className="relative">
             <Lottie
               animationData={papanelHead}
@@ -82,4 +56,8 @@ export default function SantaCart() {
       )}
     </main>
   );
+}
+
+export async function getServerSideProps() {
+  return { props: {} };
 }

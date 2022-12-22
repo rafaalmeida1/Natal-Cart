@@ -7,7 +7,6 @@ import { FormContext } from "../context/FormContext";
 
 export default function Home() {
   const { setNameInCart, name } = useContext(FormContext);
-
   return (
     <>
       <Head>
@@ -16,51 +15,46 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <title>Cartão de Natal</title>
       </Head>
-      <main className="h-screen w-full lg:w-[40%] flex items-center justify-center shadow-white shadow-2xl mx-auto relative">
-        <div
-          style={{
-            zIndex: -1,
-            position: "fixed",
-            width: "100vw",
-            height: "100vh",
-          }}
-        >
-          <Image
-            src="/assets/bgNatal.png"
-            alt=""
-            layout="fill"
-            objectFit="contain"
-          />
-        </div>
-        <form className="font-roboto">
-          <input
-            autoComplete="off"
-            id="name"
-            type="text"
-            placeholder="Digite Seu Primeiro Nome"
-            className="z-50 w-full p-2 rounded-xl border-b-2 border-t-2 border-t-transparent bg-transparent text-[#FFD700] placeholder:text-[#FFD700] focus:border-white focus:border-t-white outline-none duration-200"
-            value={name}
-            onChange={(e) => setNameInCart(e.target.value)}
-          />
-          {name === "" ? (
-            <button
-              type="button"
-              className="z-50 flex items-center w-full font-bold justify-between text-white bg-gradient-to-r from-purple-700 to-red-600 transition-all duration-200 rounded-xl p-2 mt-5 cursor-not-allowed"
-            >
-              Clique Para Abrir seu Presente <Gift size={32} />
-            </button>
-          ) : (
-            <Link href="/SantaCart">
+      <main className="bg-bgNatal bg-cover h-screen w-full lg:w-[40%] flex items-center justify-center mx-auto relative shadow-white shadow-xl">
+        <>
+          <form className="font-roboto page">
+            <input
+              autoComplete="off"
+              id="name"
+              type="text"
+              placeholder="Digite Seu Primeiro Nome"
+              className="z-50 w-full p-2 rounded-xl border-b-2 border-t-2 border-t-transparent bg-transparent text-[#FFD700] placeholder:text-[#FFD700] focus:border-white focus:border-t-white outline-none duration-200"
+              value={name}
+              onChange={(e) => setNameInCart(e.target.value)}
+            />
+            {name === "" ? (
               <button
-                type="submit"
-                className="z-50 flex items-center w-full font-bold justify-between text-white bg-gradient-to-r from-purple-500 to-red-500 hover:bg-gradient-to-r hover:from-purple-700 hover:to-red-600 transition-all duration-200 rounded-xl p-2 mt-5"
+                type="button"
+                className="z-50 flex items-center w-full font-bold justify-between text-white bg-gradient-to-r from-purple-700 to-red-600 transition-all duration-200 rounded-xl p-2 mt-5 cursor-not-allowed"
               >
                 Clique Para Abrir seu Presente <Gift size={32} />
               </button>
-            </Link>
-          )}
-        </form>
+            ) : (
+              <Link href="/SantaCart">
+                <button
+                  type="submit"
+                  className="z-50 flex items-center w-full font-bold justify-between text-white bg-gradient-to-r from-purple-500 to-red-500 hover:bg-gradient-to-r hover:from-purple-700 hover:to-red-600 transition-all duration-200 rounded-xl p-2 mt-5"
+                >
+                  Clique Para Abrir seu Presente <Gift size={32} />
+                </button>
+              </Link>
+            )}
+          </form>{" "}
+        </>
+        )
       </main>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  // await new Promise((resolve) => {
+  //   setTimeout(() => resolve, 1)
+  // })
+  return { props: {} };
 }
