@@ -17,7 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           src="/assets/bgNatal.png"
           alt=""
           layout="fill"
-          objectFit="contain"
+          className="h-full object-cover sm:object-contain"
         />
       </div>
       <Link
