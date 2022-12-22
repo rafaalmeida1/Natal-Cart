@@ -14,6 +14,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
           rel="stylesheet"
         />
+        <title>Cartão de Natal</title>
       </Head>
       <body className="bg-slate-900">
         <div className="absolute top-0 left-0 w-full h-full bg-snow bg-top-0 bg-bottom-0 bg-left-0 bg-right-0 bg-snow1 animate-[snowfall_30s_linear_infinite]"></div>
