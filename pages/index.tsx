@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { Gift } from "phosphor-react";
 import { useContext } from "react";
 import { FormContext } from "../context/FormContext";
@@ -16,7 +16,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <title>Cartão de Natal</title>
       </Head>
-      <main className="bg-bgNatal bg-cover h-screen w-full lg:w-[40%] flex items-center justify-center mx-auto relative shadow-white shadow-xl">
         <>
           <form className="font-roboto page">
             <input
@@ -48,7 +47,6 @@ export default function Home() {
           </form>{" "}
         </>
         )
-      </main>
     </>
   );
 }

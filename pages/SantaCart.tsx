@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useContext } from "react";
 import { FormContext } from "../context/FormContext";
 import Link from "next/link";
@@ -8,15 +9,14 @@ import papanelAnimation from "../public/assets/papanel.json";
 import woodAnimation from "../public/assets/wood.json";
 import papanelHead from "../public/assets/papanelHead.json";
 
-const myLoader = () => {
-  return "https://i.imgur.com/780BLED.png";
-};
-
 export default function SantaCart() {
   const { name } = useContext(FormContext);
 
   return (
-    <main className="h-screen w-screen lg:w-[40%] flex flex-col items-center justify-center mx-auto relative bg-bgNatal bg-cover shadow-white shadow-xl">
+    <>
+      <Head>
+        <title>Cartão de Natal</title>
+      </Head>
       {name === "" ? (
         <>
           <Link href="/">
@@ -54,7 +54,7 @@ export default function SantaCart() {
           />
         </>
       )}
-    </main>
+    </>
   );
 }
 
