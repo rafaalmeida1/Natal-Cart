@@ -44,9 +44,8 @@ export default function Home() {
                 </button>
               </Link>
             )}
-          </form>{" "}
+          </form>
         </>
-        )
     </>
   );
 }
