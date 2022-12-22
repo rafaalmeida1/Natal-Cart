@@ -7,6 +7,7 @@ import { FormContext } from "../context/FormContext";
 
 export default function Home() {
   const { setNameInCart, name } = useContext(FormContext);
+
   return (
     <>
       <Head>
